@@ -1,0 +1,42 @@
+:local .dClockContainer{
+    font-family: 'PT Sans';
+}
+
+:local .dClockMain .dClockTime{
+    font-size: 20vw;
+    line-height: 110%;
+}
+
+:local .dClockWorld .dClockTime{
+    font-size: 8vw;
+    line-height: 110%;
+}
+
+:local .dClockMain .dClockDate{
+    font-size: 3vw;
+}
+
+:local .dClockWorld .dClockDate{
+    font-size: 2vw;
+}
+
+:local .dClockWorld > ul{
+    list-style: none;
+}
+
+:local .dClockWorld li{
+    border-bottom: 1px solid #444;
+    padding: 10px;
+}
+
+@media screen and (min-width: 700px) {
+    :local .dClockWorld li{
+        width: 50%;
+        display: inline-block;
+        box-sizing: border-box;
+    }
+
+    :local .dClockWorld li:nth-child(odd){
+        border-right: 1px solid #444;
+    }
+}
