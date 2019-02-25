@@ -1,6 +1,5 @@
 import React from 'react';
 import style from './digitalClock.css';
-import Header from './header.js';
 
 class DigitalClock extends React.Component {
     constructor(){
@@ -31,7 +30,6 @@ class DigitalClock extends React.Component {
         const time = this.state.time;
         return(
             <div className="container">
-                <Header />
                 <div className={style.dClockContainer}>
                     <div className={style.dClockMain}>
                         <div className={style.dClockTime}>

@@ -1,5 +1,7 @@
 :local header{
     margin-bottom: 5vh;
+    text-align: center;
+    margin: 0;
 }
 
 :local header ul{
