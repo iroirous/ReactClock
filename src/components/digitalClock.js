@@ -1,5 +1,6 @@
 import React from 'react';
 import style from './digitalClock.css';
+import Header from './header.js';
 
 class DigitalClock extends React.Component {
     constructor(){
@@ -29,17 +30,21 @@ class DigitalClock extends React.Component {
     render(){
         const time = this.state.time;
         return(
-            <div className={style.dClockContainer}>
-                <div className={style.dClockMain}>
-                    <div className={style.dClockTime}>
-                    {this.addZero(time.getHours())}:{this.addZero(time.getMinutes())}:{this.addZero(time.getSeconds())}
-                    </div>
-                    
-                    <div className={style.dClockDate}>
-                        {this.getDay(time.getDay())}, {this.getMonth(time.getMonth)} {time.getDate()}, {time.getFullYear()}
+            <div className="container">
+                <Header />
+                <div className={style.dClockContainer}>
+                    <div className={style.dClockMain}>
+                        <div className={style.dClockTime}>
+                        {this.addZero(time.getHours())}:{this.addZero(time.getMinutes())}:{this.addZero(time.getSeconds())}
+                        </div>
+                        
+                        <div className={style.dClockDate}>
+                            {this.getDay(time.getDay())}, {this.getMonth(time.getMonth)} {time.getDate()}, {time.getFullYear()}
+                        </div>
                     </div>
                 </div>
             </div>
+
         );
     }
 }
