@@ -1,0 +1,37 @@
+:local .stopwatchTime{
+    font-size: 20vw;
+    line-height: 110%;
+}
+
+:local .stopWatchMilliSeconds{
+    font-size: 7vw;
+}
+
+:local .stopwatchButtons ul{
+    position: absolute;
+    bottom: 0;
+    list-style: none;
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+:local .stopwatchButtons li{
+    font-size: 20pt;
+    border-top: 1px solid #555;
+    padding: 2vh 0;
+    display: inline-block;
+    color: #ddd;
+    display: table-cell;
+    cursor: pointer;
+}
+
+:local .stopwatchButtons li:hover{
+    background: #222;
+}
+
+:local .stopwatchButtons li:nth-child(odd){
+    border-right: 1px solid #555;
+}

@@ -7,7 +7,7 @@ class DigitalClock extends React.Component {
         this.date = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
         this.month = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
         this.state = {time: new Date()};
-        setInterval(() => {this.setState({time: new Date()})}, 400)
+        setInterval(() => {this.setState({time: new Date()})}, 100)
     }
 
     addZero(num){
