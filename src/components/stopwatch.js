@@ -108,7 +108,7 @@ class Stopwatch extends React.Component{
                     <ul>
                         {
                             laps.reverse().map((num, idx) => (
-                                <li key={idx}>
+                                <li class="animationFadein" key={laps.length - idx}>
                                     <span className={style.stopwatchLapsNum}>Lap{this.addZero(laps.length - idx)}</span>
                                     {num[0]}:{num[1]}:{num[2]}<span className={style.stopwatchLapsMilli}>:{num[3]}</span>
                                 </li>
