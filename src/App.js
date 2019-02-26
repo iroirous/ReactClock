@@ -8,6 +8,10 @@ import DigitalClock from './components/digitalClock.js';
 import Stopwatch from './components/stopwatch.js';
 
 class App extends Component {
+  componentDidMount(){
+    document.title = "React Clock"
+  }
+
   render() {
     return (
       <BrowserRouter basename={process.env.PUBLIC_URL}>
