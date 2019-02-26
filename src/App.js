@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, BrowserRouter } from 'react-router-dom';
+import { Route, HashRouter } from 'react-router-dom';
 import SwipeableRoutes from "react-swipeable-routes";
 import './App.css';
 
@@ -14,7 +14,7 @@ class App extends Component {
 
   render() {
     return (
-      <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <HashRouter basename={process.env.PUBLIC_URL}>
         <div className="content">
           <Header />
           <div className="comps">
@@ -24,7 +24,7 @@ class App extends Component {
             </SwipeableRoutes>
           </div>
         </div>
-      </BrowserRouter>
+      </HashRouter>
     );
   }
 }
