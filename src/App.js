@@ -10,13 +10,13 @@ import Stopwatch from './components/stopwatch.js';
 class App extends Component {
   render() {
     return (
-      <BrowserRouter>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <div className="content">
           <Header />
           <div className="comps">
             <SwipeableRoutes className="h100">
-                <Route exact path="/ReactClock/" component={DigitalClock} />
-                <Route path="/ReactClock/stopwatch" component={Stopwatch} />
+                <Route exact path="/" component={DigitalClock} />
+                <Route path="/stopwatch" component={Stopwatch} />
             </SwipeableRoutes>
           </div>
         </div>
