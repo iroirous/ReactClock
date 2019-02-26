@@ -40,6 +40,7 @@
     border-right: 1px solid #555;
 }
 
+
 :local .stopwatchLaps{
     overflow-y: auto;
 }
@@ -51,8 +52,25 @@
     padding: 0;
 }
 
+:global {
+.stopwatchLaps li{
+    :local{
+    animation: fadeIn 1s ease 0s 1 normal;
+    }
+}
+}
+
+@keyframes fadeIn{
+    0% {opacity: 0}
+    100% {opacity: 1}
+}
+
 :local .stopwatchLapsNum{
     margin-right: 3vw;
+}
+
+:local .stopwatchLapsMilli{
+    font-size: 2vw;
 }
 
 .container{
