@@ -1,13 +1,13 @@
 {
-  "main.css": "/ReactClock/static/css/main.c5d7665e.chunk.css",
-  "main.js": "/ReactClock/static/js/main.e43ff60b.chunk.js",
-  "main.js.map": "/ReactClock/static/js/main.e43ff60b.chunk.js.map",
+  "main.css": "/ReactClock/static/css/main.a8c17e5c.chunk.css",
+  "main.js": "/ReactClock/static/js/main.6f6d3cb4.chunk.js",
+  "main.js.map": "/ReactClock/static/js/main.6f6d3cb4.chunk.js.map",
   "runtime~main.js": "/ReactClock/static/js/runtime~main.96cf0fdb.js",
   "runtime~main.js.map": "/ReactClock/static/js/runtime~main.96cf0fdb.js.map",
   "static/js/2.f26299a5.chunk.js": "/ReactClock/static/js/2.f26299a5.chunk.js",
   "static/js/2.f26299a5.chunk.js.map": "/ReactClock/static/js/2.f26299a5.chunk.js.map",
   "index.html": "/ReactClock/index.html",
-  "precache-manifest.d3532e7dde5f234631deb5e3a65ac167.js": "/ReactClock/precache-manifest.d3532e7dde5f234631deb5e3a65ac167.js",
+  "precache-manifest.cde538c78249019fa13d0c89c4c7b819.js": "/ReactClock/precache-manifest.cde538c78249019fa13d0c89c4c7b819.js",
   "service-worker.js": "/ReactClock/service-worker.js",
-  "static/css/main.c5d7665e.chunk.css.map": "/ReactClock/static/css/main.c5d7665e.chunk.css.map"
+  "static/css/main.a8c17e5c.chunk.css.map": "/ReactClock/static/css/main.a8c17e5c.chunk.css.map"
 }
