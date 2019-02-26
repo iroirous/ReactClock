@@ -7,9 +7,12 @@
     font-size: 7vw;
 }
 
+:local .stopwatchButtons{
+    width: 100%;
+    margin-top: auto;
+}
+
 :local .stopwatchButtons ul{
-    position: absolute;
-    bottom: 0;
     list-style: none;
     display: table;
     table-layout: fixed;
@@ -24,6 +27,7 @@
     padding: 2vh 0;
     display: inline-block;
     color: #ddd;
+    background: black;
     display: table-cell;
     cursor: pointer;
 }
@@ -34,4 +38,24 @@
 
 :local .stopwatchButtons li:nth-child(odd){
     border-right: 1px solid #555;
+}
+
+:local .stopwatchLaps{
+    overflow-y: auto;
+}
+
+:local .stopwatchLaps ul{
+    list-style: none;
+    font-size: 4vw;
+    margin: 0;
+    padding: 0;
+}
+
+:local .stopwatchLapsNum{
+    margin-right: 3vw;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
 }

@@ -1,5 +1,6 @@
 html{
   user-select: none;
+  height: 100%;
 }
 
 .container{
@@ -8,6 +9,7 @@ html{
   color: #ddd;
   font-family: 'PT Sans';
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 .content{
@@ -19,6 +21,7 @@ html{
 
 .comps{
   flex: 1 1 100%;
+  overflow: hidden;
 }
 
 .h100, .react-swipeable-view-container{

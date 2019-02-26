@@ -5,26 +5,28 @@ class Stopwatch extends React.Component{
     constructor(){
         super();
         this.state ={
-            elapsed: 0,
+            elapssed: 0,
             state: 'reset',
-            elapsedMemory: 0
+            elapssedMemory: 0,
+            laps: []
         };
     }
 
     clear(){
         this.setState({
-            elapsed: 0,
-            state: 'reset'
+            elapssed: 0,
+            state: 'reset',
+            laps: []
         });
     }
 
     start(){
         this.setState({
             startTime: new Date().getTime(),
-            elapsed: 0,
+            elapssed: 0,
             timer: setInterval(() => {
                     this.setState({
-                        elapsed: new Date().getTime() - this.state.startTime
+                        elapssed: new Date().getTime() - this.state.startTime
                     });
                 }, 33),
             state: 'running'
@@ -34,18 +36,26 @@ class Stopwatch extends React.Component{
     pause(){
         clearInterval(this.state.timer);
         this.setState({
-            elapsedMemory: this.state.elapsed,
+            elapssedMemory: this.state.elapssed,
             state: 'pause'
+        });
+    }
+
+    lap(){
+        let tmp = this.state.laps;
+        tmp.push(this.state.elapssed);
+        this.setState({
+            laps: tmp
         });
     }
 
     restart(){
         this.setState({
             startTime: new Date().getTime(),
-            elapsed: this.state.elapsedMemory,
+            elapssed: this.state.elapssedMemory,
             timer: setInterval(() => {
                 this.setState({
-                    elapsed: this.state.elapsedMemory + (new Date().getTime() - this.state.startTime)
+                    elapssed: this.state.elapssedMemory + (new Date().getTime() - this.state.startTime)
                 });
             }, 33),
             state: 'running'
@@ -69,18 +79,42 @@ class Stopwatch extends React.Component{
         }
     }
 
+    elapssedToString(time){
+        const elapssed = time / 1000;
+        const hour = this.addZero(parseInt(elapssed / 3600));
+        const min = this.addZero(parseInt((elapssed / 60) % 60));
+        const sec = this.addZero(parseInt(elapssed % 60));
+        const milli = this.addZero(time % 1000, 3);
+
+        return [hour, min, sec, milli];
+    }
+
     render(){
-        const elapsed = this.state.elapsed / 1000;
-        const hour = this.addZero(parseInt(elapsed / 3600));
-        const min = this.addZero(parseInt((elapsed / 60) % 60));
-        const sec = this.addZero(parseInt(elapsed % 60));
-        const milli = this.addZero(this.state.elapsed % 1000, 3);
+        const elapssed = this.elapssedToString(this.state.elapssed);
+
+        // ラップタイムを取得
+        const laps = [];
+        for(const num in this.state.laps){
+            laps.push(this.elapssedToString(this.state.laps[num]));
+        }
 
         return(
             <div className="container">
                 <div className={style.stopwatchTime}>
-                    <span className={style.stopwatchTimeBig}>{hour}:{min}:{sec}</span>
-                    <span className={style.stopWatchMilliSeconds}>:{milli}</span>
+                    <span className={style.stopwatchTimeBig}>{elapssed[0]}:{elapssed[1]}:{elapssed[2]}</span>
+                    <span className={style.stopWatchMilliSeconds}>:{elapssed[3]}</span>
+                </div>
+                <div className={style.stopwatchLaps}>
+                    <ul>
+                        {
+                            laps.reverse().map((num, idx) => (
+                                <li>
+                                    <span class={style.stopwatchLapsNum}>Lap{this.addZero(laps.length - idx)}</span>
+                                    {num[0]}:{num[1]}:{num[2]}:{num[3]}
+                                </li>
+                            ))
+                        }
+                    </ul>
                 </div>
                 <div className={style.stopwatchButtons}>
                     <ul>
@@ -89,6 +123,9 @@ class Stopwatch extends React.Component{
                         )}
                         {(this.state.state === 'running') && (
                             <li onClick={() => this.pause()}>Pause</li>
+                        )}
+                        {(this.state.state === 'running') && (
+                            <li onClick={() => this.lap()}>laps</li>
                         )}
                         {(this.state.state === 'pause') && (
                             <li onClick={() => this.restart()}>Continue</li>
