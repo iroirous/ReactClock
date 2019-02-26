@@ -15,8 +15,8 @@ class App extends Component {
           <Header />
           <div className="comps">
             <SwipeableRoutes className="h100">
-                <Route exact path="/" component={DigitalClock} />
-                <Route path="/stopwatch" component={Stopwatch} />
+                <Route exact path="/ReactClock/" component={DigitalClock} />
+                <Route path="/ReactClock/stopwatch" component={Stopwatch} />
             </SwipeableRoutes>
           </div>
         </div>
