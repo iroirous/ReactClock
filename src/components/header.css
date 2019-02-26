@@ -23,6 +23,7 @@
     padding: 10px;
     box-sizing: border-box;
     padding: 2vh 0;
+    outline: none;
 }
 
 header .active{

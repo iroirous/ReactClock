@@ -125,7 +125,7 @@ class Stopwatch extends React.Component{
                             <li onClick={() => this.pause()}>Pause</li>
                         )}
                         {(this.state.state === 'running') && (
-                            <li onClick={() => this.lap()}>laps</li>
+                            <li onClick={() => this.lap()}>Lap</li>
                         )}
                         {(this.state.state === 'pause') && (
                             <li onClick={() => this.restart()}>Continue</li>
