@@ -14,7 +14,7 @@ class App extends Component {
 
   render() {
     return (
-      <HashRouter basename={process.env.PUBLIC_URL}>
+      <HashRouter>
         <div className="content">
           <Header />
           <div className="comps">
